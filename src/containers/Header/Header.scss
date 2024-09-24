@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "PWHappyChristmas";
+    src: url("./PWHappyChristmas.ttf") format("truetype");
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    height: 4em;
+    align-items: center;
+    background-color: snow;
+    color: #cc5760;
+    border-bottom: #5c7356 0.5ch solid;
+    padding: 1ch;
+    width: 100vw;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    &__logo {
+        align-self: stretch;
+    }
+
+    &__name {
+        font-size: 2.5em;
+        font-weight: 600;
+        padding: 0.5ch;
+
+        font-family: "PWHappyChristmas";
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-wrap: nowrap;
+    }
+}
