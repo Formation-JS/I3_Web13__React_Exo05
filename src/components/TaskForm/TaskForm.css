@@ -1,0 +1,73 @@
+.taskform {
+    display: grid;
+    grid-template-rows: 2em 4em 2em;
+    grid-template-columns: auto 10ch 1fr auto;
+    gap: 0.5ch;
+    width: 100%;
+
+    .taskform__name,
+    .taskform__desc {
+        grid-column: 2/5;
+    }
+
+    .taskform__priority {
+        grid-column: 2;
+    }
+
+    .taskform__submit {
+        grid-column: 4;
+    }
+
+    @media only screen and (max-width: 600px) {
+        grid-template-rows: 1.3em 2em 1.3em 4em 1.3em 2em;
+        grid-template-columns: repeat(3, 1fr);
+
+        label {
+            grid-column: 1/4;
+        }
+
+        .taskform__name,
+        .taskform__desc {
+            grid-column: 1/4;
+        }
+
+        .taskform__priority {
+            grid-column: 1;
+        }
+
+        .taskform__submit {
+            grid-column: 3;
+        }
+    }
+
+
+
+    label::after {
+        content: ':';
+        margin-left: 0.5ch;
+        margin-right: 0.5ch;
+    }
+
+    input,
+    textarea,
+    select {
+        padding: 1ch;
+        outline: none !important;
+        border: 0.25ch #5c7356 solid;
+        border-radius: 1ch;
+        resize: none;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 0.8em;
+
+        &:hover,
+        &:focus {
+            border-color: navy;
+        }
+    }
+
+    input,
+    textarea,
+    select {
+        background-color: snow;
+    }
+}
