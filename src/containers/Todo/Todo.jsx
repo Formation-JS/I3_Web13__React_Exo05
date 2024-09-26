@@ -36,6 +36,27 @@ const Todo = () => {
         setTasks(prevTasks => [...prevTasks, task]);
     };
 
+    //! Réaction à l'event "onTaskDelete" du composant "TaskList"
+    const handleDeleteTask = (id) => {
+        setTasks(tasks => tasks.filter(task => task.id !== id));
+    }
+
+    //! Réaction à l'event "onTaskFinish" du composant "TaskList"
+    const handleFinishTask = (id) => {
+        setTasks(tasks => tasks.map(task => task.id !== id ? task : { ...task, isDone : true }));
+
+        /*
+        setTasks(tasks => {
+            const result = structuredClone(tasks);
+
+            const target = result.find((task) => task.id === id);
+            target.completion = true;
+
+            return result;
+        })
+        */
+    }
+
     //! Rendu du composant
     return (
         <>
@@ -44,7 +65,10 @@ const Todo = () => {
             <TaskForm onTaskSubmit={handleNewTask} />
 
             <h2>Liste des taches</h2>
-            <TaskList allTasks={tasks} />
+            <TaskList allTasks={tasks}
+                onTaskDelete={handleDeleteTask} 
+                onTaskFinish={handleFinishTask}    
+            />
         </>
     );
 }
