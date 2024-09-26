@@ -13,6 +13,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  cursor: url("/docs/santa01.png") 0 0, pointer;
+}
+*::selection {
+  background-color: goldenrod;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -30,28 +37,55 @@ body {
   min-height: 100vh;
 }
 
+main {
+  max-width: 80vw;
+  width: 100%;
+}
+
 h1 {
   font-size: 1.8em;
   line-height: 1.1;
+  color: #5c7356;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #cc5760;
 }
 
 button {
+  cursor: url("/docs/santa03.png") 0 0, pointer;
+        
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none !important;
+  text-align: center;
+  padding: 0.4ch 1.5ch;
+  background-color: #5c7356;
+  color: snow;
+  border: 0.3ch #5c7356 solid;
+  border-radius: 1ch;
+
+  &:hover,
+  &:focus {
+      border-color: navy;
+  }
+
+  &:active {
+      background-color: #5da84a;
+  }
+
+  &:disabled {
+      cursor: not-allowed;
+      border-color: #d1d1d1;
+      background-color: #d1d1d1;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -61,8 +95,5 @@ button:focus-visible {
   }
   a:hover {
     color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
   }
 }

@@ -1,5 +1,6 @@
 import './App.css'
 import Header from './containers/Header/Header';
+import Todo from './containers/Todo/Todo';
 
 function App() {
 
@@ -7,7 +8,7 @@ function App() {
     <>
       <Header />
       <main>
-        
+        <Todo />
       </main>
     </>
   )
