@@ -1,23 +1,14 @@
 import { useRef, useState } from 'react';
 import TaskForm from '../../components/TaskForm/TaskForm';
-import { taskPriorityEnum } from '../../enums/task.enum';
 import TaskList from '../../components/TaskList/TaskList';
 
 const Todo = () => {
 
     //! State pour stocker la valeur des taches
-    const [tasks, setTasks] = useState([
-        {
-            id: 1,
-            name: 'Tache de test !',
-            desc: 'Il faudra virer cette tache du code quand on a fini :o',
-            priority: taskPriorityEnum.urgent, /* low | normal | urgent */
-            isDone: false
-        }
-    ]);
+    const [tasks, setTasks] = useState([]);
 
     //! Stockage d'une valeur via un "useRef" pour conserver la valeur de l'id
-    const nextTaskId = useRef(2);
+    const nextTaskId = useRef(1);
 
     //! Réaction à l'event "onTaskSubmit" du composant "TaskForm"
     const handleNewTask = (data) => {
