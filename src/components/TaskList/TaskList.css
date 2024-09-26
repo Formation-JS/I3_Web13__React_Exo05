@@ -1,0 +1,65 @@
+.tasklist {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .tasklist__item {
+        border: 0.1ch solid #5c7356;
+        border-radius: 1ch;
+        box-shadow: 0.5ch 0.5ch 0.5ch #5c7356;
+        padding: 1ch;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.5ch;
+
+        .task-data,
+        .task-act {
+            display: flex;
+            flex-direction: row;
+            gap: 1ch;
+        }
+
+        .task-data {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            flex-grow: 1;
+
+            .task-data__name,
+            .task-data__desc {
+                margin: 0;
+            }
+
+            .task-data__name {
+                font-weight: 600;
+            }
+        }
+
+        .task-data--urgent > p.task-data__name::after {
+            content: "(Urgent)";
+            color: goldenrod;
+            margin-left: 1ch;
+        }
+
+        .task-act {
+            justify-content: end;
+        }
+
+        @media only screen and (max-width: 600px) {
+            flex-direction: row;
+
+            .task-act {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .tasklist__item--done {
+        background: repeating-linear-gradient(-45deg,
+                #fffafa99, 
+                #fffafa99, 2em,
+                #90a78b99 2em, 
+                #90a78b99 4em);
+    }
+}

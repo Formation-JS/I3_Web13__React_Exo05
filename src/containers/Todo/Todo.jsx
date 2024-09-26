@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import TaskForm from '../../components/TaskForm/TaskForm';
 import { taskPriorityEnum } from '../../enums/task.enum';
+import TaskList from '../../components/TaskList/TaskList';
 
 const Todo = () => {
 
@@ -43,8 +44,7 @@ const Todo = () => {
             <TaskForm onTaskSubmit={handleNewTask} />
 
             <h2>Liste des taches</h2>
-            {/* TODO Faire la liste */}
-            <p>...</p>
+            <TaskList allTasks={tasks} />
         </>
     );
 }
